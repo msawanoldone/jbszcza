@@ -60,7 +60,7 @@ client.on('message', function(message) {
 
 client.on('message',async message => {
     if(message.content.startsWith(adminprefix + "stop")) {
-        if(message.author.id !== "526210504822358056") return message.reply('You aren\'t the bot owner.');
+        if(message.author.id !== "449757975645519872") return message.reply('You aren\'t the bot owner.');
         message.channel.send('**Stopping.**').then(msg => {
             setTimeout(() => {
                msg.edit('**Stopping..**');
