@@ -68,8 +68,7 @@ client.on('message',async message => {
             setTimeout(() => {
                msg.edit('**Stopping...**');
             },2000);
-        });
-	           setTimeout(() => {
+	    setTimeout(() => {
                msg.edit(':white_check_mark: Done!');
             },3000);
         });    
