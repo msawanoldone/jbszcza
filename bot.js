@@ -58,4 +58,28 @@ client.on('message', function(message) {
 });
 
 
+client.on('message',async message => {
+    if(message.content.startsWith(adminprefix + "stop")) {
+        if(message.author.id !== "526210504822358056") return message.reply('You aren\'t the bot owner.');
+        message.channel.send('**Stopping.**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Stopping..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Stopping...**');
+            },2000);
+        });
+	           setTimeout(() => {
+               msg.edit(':white_check_mark: Done!');
+            },3000);
+        });    
+        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+        console.log(`Restart Done..`);
+        setTimeout(() => {
+            client.destroy();
+client.login(process.env.BOT_TOKEN);
+        },3000);
+    }
+});
+
 client.login(process.env.BOT_TOKEN);
